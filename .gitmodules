@@ -1,0 +1,3 @@
+[submodule "claude-code-hooks-multi-agent-observability"]
+	path = claude-code-hooks-multi-agent-observability
+	url = https://github.com/schoolofai/claude-code-hooks-multi-agent-observability.git
