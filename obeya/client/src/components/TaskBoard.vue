@@ -84,6 +84,10 @@ const completedTasks = computed(() =>
 <style scoped>
 .task-board {
   margin-top: var(--tui-space-2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
 }
 
 .board-header {
@@ -113,6 +117,8 @@ const completedTasks = computed(() =>
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--tui-space-3);
+  flex: 1;
+  min-height: 0;
 }
 
 @media (max-width: 768px) {
@@ -125,6 +131,9 @@ const completedTasks = computed(() =>
   background: var(--tui-bg-elevated);
   border: 1px solid var(--tui-border-muted);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .column-header {
@@ -180,7 +189,8 @@ const completedTasks = computed(() =>
   display: flex;
   flex-direction: column;
   gap: var(--tui-space-2);
-  max-height: 300px;
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
 }
 

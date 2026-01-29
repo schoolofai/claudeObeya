@@ -3,7 +3,7 @@ import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import type { Session } from '../composables/useProjects';
 import { TuiSpinner, TuiWindow } from '../components/tui';
-import SessionTimeline from '../components/SessionTimeline.vue';
+import HorizontalTimeline from '../components/HorizontalTimeline.vue';
 import TaskProgressBar from '../components/TaskProgressBar.vue';
 
 interface ProjectWithStats {
@@ -121,14 +121,14 @@ watch(() => route.params.id, () => {
         </div>
       </TuiWindow>
 
-      <SessionTimeline :sessions="sessions" />
+      <HorizontalTimeline :sessions="sessions" :project-id="project.id" />
     </template>
   </div>
 </template>
 
 <style scoped>
 .project-detail {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

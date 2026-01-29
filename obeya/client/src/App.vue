@@ -176,7 +176,10 @@ onUnmounted(() => {
 
 .app-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: var(--tui-space-6);
+  min-height: 0; /* Allow flex children to shrink */
 }
 
 .app-footer {

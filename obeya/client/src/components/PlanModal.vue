@@ -39,7 +39,7 @@ async function fetchPlanContent(planId: number) {
     content.value = data.plan.plan_content || '';
   } catch (e) {
     error.value = e instanceof Error ? e.message : 'Failed to load plan content';
-    throw e; // Fast fail per user preference
+    throw e;
   } finally {
     loading.value = false;
   }
@@ -74,54 +74,58 @@ onUnmounted(() => {
 
 <template>
   <Teleport to="body">
-    <div
-      v-if="visible"
-      class="modal-overlay"
-      @click.self="emit('close')"
-    >
-      <div class="modal-container">
-        <TuiWindow
-          :title="`PLAN: ${plan?.plan_name || 'Unknown'}`"
-          variant="double"
-          :glow="true"
-          @close="emit('close')"
-        >
-          <div class="modal-content">
-            <div v-if="loading" class="loading-state">
-              <TuiSpinner variant="braille" :speed="80">Loading plan content...</TuiSpinner>
-            </div>
+    <Transition name="plan-modal">
+      <div
+        v-if="visible"
+        class="modal-overlay"
+        @click.self="emit('close')"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="modal-container">
+          <TuiWindow
+            :title="`PLAN: ${plan?.plan_name || 'Unknown'}`"
+            variant="double"
+            :glow="true"
+            :show-controls="false"
+          >
+            <div class="modal-content">
+              <div v-if="loading" class="loading-state">
+                <TuiSpinner variant="braille" :speed="80">Loading plan content...</TuiSpinner>
+              </div>
 
-            <div v-else-if="error" class="error-state">
-              <span class="error-icon">[!]</span>
-              <span class="error-message">{{ error }}</span>
-            </div>
+              <div v-else-if="error" class="error-state">
+                <span class="error-icon">[!]</span>
+                <span class="error-message">{{ error }}</span>
+              </div>
 
-            <div v-else-if="!content" class="empty-state">
-              [i] No plan content available
-            </div>
+              <div v-else-if="!content" class="empty-state">
+                [i] No plan content available
+              </div>
 
-            <TuiMarkdown v-else :content="content" />
+              <TuiMarkdown v-else :content="content" />
+            </div>
+          </TuiWindow>
+
+          <div class="modal-footer">
+            Press <kbd>Esc</kbd> to close
           </div>
-        </TuiWindow>
+        </div>
       </div>
-    </div>
+    </Transition>
   </Teleport>
 </template>
 
 <style scoped>
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   padding: var(--tui-space-4);
-  overflow: hidden;
 }
 
 .modal-container {
@@ -130,11 +134,11 @@ onUnmounted(() => {
   max-height: 85vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .modal-container :deep(.tui-window) {
-  max-height: 85vh;
+  flex: 1;
+  max-height: calc(85vh - 3rem);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -148,13 +152,32 @@ onUnmounted(() => {
 
 .modal-container :deep(.tui-window__content) {
   height: 100%;
-  max-height: calc(85vh - 4rem);
   overflow-y: auto;
   padding: var(--tui-space-4);
 }
 
 .modal-content {
   min-height: 200px;
+}
+
+.modal-footer {
+  flex-shrink: 0;
+  padding: var(--tui-space-2) var(--tui-space-3);
+  font-size: var(--tui-font-size-xs);
+  color: var(--tui-text-muted);
+  text-align: center;
+  background: var(--tui-bg-elevated);
+  border-top: 1px solid var(--tui-border-muted);
+}
+
+.modal-footer kbd {
+  display: inline-block;
+  padding: 0 var(--tui-space-1);
+  background: var(--tui-bg-surface);
+  border: 1px solid var(--tui-border-muted);
+  border-radius: 2px;
+  font-size: var(--tui-font-size-xs);
+  color: var(--tui-theme-primary);
 }
 
 .loading-state,
@@ -181,5 +204,36 @@ onUnmounted(() => {
 
 .error-message {
   color: var(--tui-text-secondary);
+}
+
+/* Transition */
+.plan-modal-enter-active,
+.plan-modal-leave-active {
+  transition: opacity 200ms ease;
+}
+
+.plan-modal-enter-active .modal-container,
+.plan-modal-leave-active .modal-container {
+  transition: transform 200ms ease;
+}
+
+.plan-modal-enter-from,
+.plan-modal-leave-to {
+  opacity: 0;
+}
+
+.plan-modal-enter-from .modal-container,
+.plan-modal-leave-to .modal-container {
+  transform: scale(0.95);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .plan-modal-enter-active,
+  .plan-modal-leave-active,
+  .plan-modal-enter-active .modal-container,
+  .plan-modal-leave-active .modal-container {
+    transition: none;
+  }
 }
 </style>

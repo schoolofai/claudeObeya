@@ -3,7 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { Session, Plan, Task } from '../composables/useProjects';
 import { TuiBadge, TuiSpinner } from './tui';
 import TaskBoard from './TaskBoard.vue';
-import PlanDetailModal from './PlanDetailModal.vue';
+import PlanModal from './PlanModal.vue';
 
 const props = defineProps<{
   session: Session;
@@ -166,8 +166,8 @@ function closePlanModal() {
       </div>
     </div>
 
-    <!-- Plan Detail Modal -->
-    <PlanDetailModal
+    <!-- Plan Modal -->
+    <PlanModal
       :plan="selectedPlan"
       :visible="showPlanModal"
       @close="closePlanModal"
