@@ -1,0 +1,53 @@
+/* TUI Animation Utility Classes */
+
+/* Blink animations */
+.tui-blink {
+  animation: tui-blink var(--tui-blink-speed) step-end infinite;
+}
+
+.tui-blink-fast {
+  animation: tui-blink var(--tui-blink-fast) step-end infinite;
+}
+
+.tui-blink-slow {
+  animation: tui-blink var(--tui-blink-slow) step-end infinite;
+}
+
+/* Fade animations */
+.tui-fade-in {
+  animation: tui-fade-in var(--tui-duration-base) ease-out;
+}
+
+/* Transition utilities */
+.tui-transition {
+  transition-property: color, background-color, border-color, opacity;
+  transition-duration: var(--tui-duration-base);
+  transition-timing-function: ease-in-out;
+}
+
+.tui-transition-fast {
+  transition-duration: var(--tui-duration-fast);
+}
+
+.tui-transition-slow {
+  transition-duration: var(--tui-duration-slow);
+}
+
+/* Animation delay utilities */
+.tui-delay-100 { animation-delay: 100ms; }
+.tui-delay-200 { animation-delay: 200ms; }
+.tui-delay-300 { animation-delay: 300ms; }
+.tui-delay-500 { animation-delay: 500ms; }
+.tui-delay-1000 { animation-delay: 1000ms; }
+
+/* Pause animations on hover (useful for spinners) */
+.tui-pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+/* Disable all animations */
+.tui-no-animation,
+.tui-no-animation * {
+  animation: none !important;
+  transition: none !important;
+}

@@ -1,0 +1,45 @@
+/* Syntax Theme - Multi-color Code Editor Style */
+
+[data-theme="syntax"] {
+  --tui-theme-primary: #e6edf3;
+  --tui-theme-primary-bright: #ffffff;
+  --tui-theme-primary-dim: #8b949e;
+  --tui-theme-primary-glow: rgba(230, 237, 243, 0.3);
+
+  --tui-text-primary: #e6edf3;
+  --tui-text-secondary: #8b949e;
+  --tui-text-muted: #6e7681;
+
+  --tui-border-primary: #30363d;
+  --tui-border-secondary: #21262d;
+  --tui-border-muted: #161b22;
+
+  /* Syntax highlighting colors */
+  --tui-syntax-keyword: #ff79c6;
+  --tui-syntax-string: #f1fa8c;
+  --tui-syntax-function: #50fa7b;
+  --tui-syntax-variable: #8be9fd;
+  --tui-syntax-number: #bd93f9;
+  --tui-syntax-comment: #6272a4;
+  --tui-syntax-operator: #ff79c6;
+  --tui-syntax-constant: #ffb86c;
+
+  color: var(--tui-text-primary);
+}
+
+[data-theme="syntax"] .tui-glow,
+[data-theme="syntax"] .tui-text-glow {
+  text-shadow:
+    0 0 2px var(--tui-theme-primary-glow),
+    0 0 4px var(--tui-theme-primary-glow);
+}
+
+/* Syntax-specific color classes */
+[data-theme="syntax"] .syntax-keyword { color: var(--tui-syntax-keyword); }
+[data-theme="syntax"] .syntax-string { color: var(--tui-syntax-string); }
+[data-theme="syntax"] .syntax-function { color: var(--tui-syntax-function); }
+[data-theme="syntax"] .syntax-variable { color: var(--tui-syntax-variable); }
+[data-theme="syntax"] .syntax-number { color: var(--tui-syntax-number); }
+[data-theme="syntax"] .syntax-comment { color: var(--tui-syntax-comment); }
+[data-theme="syntax"] .syntax-operator { color: var(--tui-syntax-operator); }
+[data-theme="syntax"] .syntax-constant { color: var(--tui-syntax-constant); }

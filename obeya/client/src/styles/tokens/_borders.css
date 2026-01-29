@@ -1,0 +1,51 @@
+/* TUI Border Design Tokens - Box Drawing Characters */
+
+:root {
+  /* Single line box drawing */
+  --tui-box-h: "─";           /* Horizontal */
+  --tui-box-v: "│";           /* Vertical */
+  --tui-box-tl: "┌";          /* Top-left corner */
+  --tui-box-tr: "┐";          /* Top-right corner */
+  --tui-box-bl: "└";          /* Bottom-left corner */
+  --tui-box-br: "┘";          /* Bottom-right corner */
+  --tui-box-t: "┬";           /* T-junction down */
+  --tui-box-b: "┴";           /* T-junction up */
+  --tui-box-l: "├";           /* T-junction right */
+  --tui-box-r: "┤";           /* T-junction left */
+  --tui-box-x: "┼";           /* Cross junction */
+
+  /* Double line box drawing */
+  --tui-box2-h: "═";          /* Horizontal */
+  --tui-box2-v: "║";          /* Vertical */
+  --tui-box2-tl: "╔";         /* Top-left corner */
+  --tui-box2-tr: "╗";         /* Top-right corner */
+  --tui-box2-bl: "╚";         /* Bottom-left corner */
+  --tui-box2-br: "╝";         /* Bottom-right corner */
+  --tui-box2-t: "╦";          /* T-junction down */
+  --tui-box2-b: "╩";          /* T-junction up */
+  --tui-box2-l: "╠";          /* T-junction right */
+  --tui-box2-r: "╣";          /* T-junction left */
+  --tui-box2-x: "╬";          /* Cross junction */
+
+  /* Rounded corners */
+  --tui-box-r-tl: "╭";        /* Rounded top-left */
+  --tui-box-r-tr: "╮";        /* Rounded top-right */
+  --tui-box-r-bl: "╰";        /* Rounded bottom-left */
+  --tui-box-r-br: "╯";        /* Rounded bottom-right */
+
+  /* Block characters */
+  --tui-block-full: "█";      /* Full block */
+  --tui-block-light: "░";     /* Light shade */
+  --tui-block-medium: "▒";    /* Medium shade */
+  --tui-block-dark: "▓";      /* Dark shade */
+
+  /* Progress bar blocks */
+  --tui-block-left: "▏";      /* 1/8 left block */
+  --tui-block-h-half: "▌";    /* Left half block */
+  --tui-block-v-half: "▀";    /* Upper half block */
+
+  /* Border widths */
+  --tui-border-width-thin: 1px;
+  --tui-border-width-medium: 2px;
+  --tui-border-width-thick: 3px;
+}

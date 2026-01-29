@@ -1,0 +1,24 @@
+/* TUI Spacing Design Tokens */
+
+:root {
+  /* Base spacing unit */
+  --tui-space-unit: 4px;
+
+  /* Spacing scale */
+  --tui-space-1: calc(var(--tui-space-unit) * 1);  /* 4px */
+  --tui-space-2: calc(var(--tui-space-unit) * 2);  /* 8px */
+  --tui-space-3: calc(var(--tui-space-unit) * 3);  /* 12px */
+  --tui-space-4: calc(var(--tui-space-unit) * 4);  /* 16px */
+  --tui-space-5: calc(var(--tui-space-unit) * 5);  /* 20px */
+  --tui-space-6: calc(var(--tui-space-unit) * 6);  /* 24px */
+  --tui-space-8: calc(var(--tui-space-unit) * 8);  /* 32px */
+  --tui-space-10: calc(var(--tui-space-unit) * 10); /* 40px */
+  --tui-space-12: calc(var(--tui-space-unit) * 12); /* 48px */
+  --tui-space-16: calc(var(--tui-space-unit) * 16); /* 64px */
+
+  /* Character-based spacing (for terminal alignment) */
+  --tui-char-width: 1ch;
+  --tui-char-2: 2ch;
+  --tui-char-4: 4ch;
+  --tui-char-8: 8ch;
+}

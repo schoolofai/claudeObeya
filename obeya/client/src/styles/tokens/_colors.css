@@ -1,0 +1,73 @@
+/* TUI Color Design Tokens */
+
+:root {
+  /* Terminal backgrounds */
+  --tui-bg-base: #000000;
+  --tui-bg-surface: #111111;
+  --tui-bg-elevated: #0a0a0a;
+  --tui-bg-overlay: rgba(0, 0, 0, 0.9);
+
+  /* Phosphor green (primary) */
+  --tui-green-base: #00ff00;
+  --tui-green-bright: #33ff33;
+  --tui-green-dim: #00cc00;
+  --tui-green-glow: rgba(0, 255, 0, 0.4);
+
+  /* Amber accent */
+  --tui-amber-base: #ffb000;
+  --tui-amber-bright: #ffc033;
+  --tui-amber-dim: #cc8c00;
+  --tui-amber-glow: rgba(255, 176, 0, 0.4);
+
+  /* Cyan accent */
+  --tui-cyan-base: #00ffff;
+  --tui-cyan-bright: #33ffff;
+  --tui-cyan-dim: #00cccc;
+  --tui-cyan-glow: rgba(0, 255, 255, 0.4);
+
+  /* Magenta accent */
+  --tui-magenta-base: #ff00ff;
+  --tui-magenta-bright: #ff33ff;
+  --tui-magenta-dim: #cc00cc;
+  --tui-magenta-glow: rgba(255, 0, 255, 0.4);
+
+  /* Red (error) */
+  --tui-red-base: #ff3333;
+  --tui-red-bright: #ff5555;
+  --tui-red-dim: #cc2929;
+  --tui-red-glow: rgba(255, 51, 51, 0.4);
+
+  /* Blue accent */
+  --tui-blue-base: #3399ff;
+  --tui-blue-bright: #55aaff;
+  --tui-blue-dim: #2277cc;
+  --tui-blue-glow: rgba(51, 153, 255, 0.4);
+
+  /* Purple accent */
+  --tui-purple-base: #aa77ff;
+  --tui-purple-bright: #bb99ff;
+  --tui-purple-dim: #8855cc;
+  --tui-purple-glow: rgba(170, 119, 255, 0.4);
+
+  /* Text colors (default to green phosphor) */
+  --tui-text-primary: var(--tui-green-base);
+  --tui-text-secondary: var(--tui-green-dim);
+  --tui-text-muted: #006600;
+
+  /* Border colors */
+  --tui-border-primary: var(--tui-green-base);
+  --tui-border-secondary: var(--tui-green-dim);
+  --tui-border-muted: #003300;
+
+  /* Semantic colors */
+  --tui-success: var(--tui-green-base);
+  --tui-warning: var(--tui-amber-base);
+  --tui-error: var(--tui-red-base);
+  --tui-info: var(--tui-cyan-base);
+
+  /* Theme primary (overridden by themes) */
+  --tui-theme-primary: var(--tui-green-base);
+  --tui-theme-primary-bright: var(--tui-green-bright);
+  --tui-theme-primary-dim: var(--tui-green-dim);
+  --tui-theme-primary-glow: var(--tui-green-glow);
+}

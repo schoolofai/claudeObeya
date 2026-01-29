@@ -1,0 +1,23 @@
+{
+  "name": "obeya-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "dev:bun": "bun --watch src/index.ts",
+    "start:bun": "bun src/index.ts",
+    "db:reset": "tsx scripts/reset-db.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

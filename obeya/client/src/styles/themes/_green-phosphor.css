@@ -1,0 +1,29 @@
+/* Green Phosphor Theme - Classic Terminal */
+
+[data-theme="green-phosphor"],
+:root {
+  --tui-theme-primary: var(--tui-green-base);
+  --tui-theme-primary-bright: var(--tui-green-bright);
+  --tui-theme-primary-dim: var(--tui-green-dim);
+  --tui-theme-primary-glow: var(--tui-green-glow);
+
+  --tui-text-primary: var(--tui-green-base);
+  --tui-text-secondary: var(--tui-green-dim);
+  --tui-text-muted: #006600;
+
+  --tui-border-primary: var(--tui-green-base);
+  --tui-border-secondary: var(--tui-green-dim);
+  --tui-border-muted: #003300;
+}
+
+[data-theme="green-phosphor"] {
+  color: var(--tui-green-base);
+}
+
+[data-theme="green-phosphor"] .tui-glow,
+[data-theme="green-phosphor"] .tui-text-glow {
+  text-shadow:
+    0 0 2px var(--tui-green-glow),
+    0 0 4px var(--tui-green-glow),
+    0 0 8px var(--tui-green-glow);
+}

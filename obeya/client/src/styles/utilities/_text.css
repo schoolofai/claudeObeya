@@ -1,0 +1,78 @@
+/* TUI Text Utility Classes */
+
+/* Text colors */
+.tui-text-primary { color: var(--tui-text-primary); }
+.tui-text-secondary { color: var(--tui-text-secondary); }
+.tui-text-muted { color: var(--tui-text-muted); }
+
+/* Semantic text colors */
+.tui-text-success { color: var(--tui-success); }
+.tui-text-warning { color: var(--tui-warning); }
+.tui-text-error { color: var(--tui-error); }
+.tui-text-info { color: var(--tui-info); }
+
+/* Specific color text */
+.tui-text-green { color: var(--tui-green-base); }
+.tui-text-amber { color: var(--tui-amber-base); }
+.tui-text-cyan { color: var(--tui-cyan-base); }
+.tui-text-magenta { color: var(--tui-magenta-base); }
+.tui-text-red { color: var(--tui-red-base); }
+.tui-text-blue { color: var(--tui-blue-base); }
+.tui-text-purple { color: var(--tui-purple-base); }
+
+/* Font sizes */
+.tui-text-xs { font-size: var(--tui-font-size-xs); }
+.tui-text-sm { font-size: var(--tui-font-size-sm); }
+.tui-text-base { font-size: var(--tui-font-size-base); }
+.tui-text-md { font-size: var(--tui-font-size-md); }
+.tui-text-lg { font-size: var(--tui-font-size-lg); }
+.tui-text-xl { font-size: var(--tui-font-size-xl); }
+.tui-text-2xl { font-size: var(--tui-font-size-2xl); }
+
+/* Font weights */
+.tui-font-normal { font-weight: var(--tui-font-weight-normal); }
+.tui-font-medium { font-weight: var(--tui-font-weight-medium); }
+.tui-font-semibold { font-weight: var(--tui-font-weight-semibold); }
+.tui-font-bold { font-weight: var(--tui-font-weight-bold); }
+
+/* Font families */
+.tui-font-mono { font-family: var(--tui-font-mono); }
+.tui-font-display { font-family: var(--tui-font-display); }
+
+/* Letter spacing */
+.tui-tracking-tight { letter-spacing: var(--tui-letter-spacing-tight); }
+.tui-tracking-normal { letter-spacing: var(--tui-letter-spacing-normal); }
+.tui-tracking-wide { letter-spacing: var(--tui-letter-spacing-wide); }
+.tui-tracking-wider { letter-spacing: var(--tui-letter-spacing-wider); }
+
+/* Text decoration */
+.tui-underline { text-decoration: underline; }
+.tui-no-underline { text-decoration: none; }
+
+/* Text transform */
+.tui-uppercase { text-transform: uppercase; }
+.tui-lowercase { text-transform: lowercase; }
+.tui-capitalize { text-transform: capitalize; }
+
+/* Text alignment */
+.tui-text-left { text-align: left; }
+.tui-text-center { text-align: center; }
+.tui-text-right { text-align: right; }
+
+/* Truncation */
+.tui-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Pre-formatted */
+.tui-pre {
+  white-space: pre;
+  font-family: var(--tui-font-mono);
+}
+
+.tui-pre-wrap {
+  white-space: pre-wrap;
+  font-family: var(--tui-font-mono);
+}

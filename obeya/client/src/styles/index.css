@@ -1,0 +1,147 @@
+/* TUI Design System - Main Entry Point */
+
+/* Design Tokens */
+@import './tokens/_colors.css';
+@import './tokens/_typography.css';
+@import './tokens/_spacing.css';
+@import './tokens/_borders.css';
+@import './tokens/_animation.css';
+
+/* Themes */
+@import './themes/_green-phosphor.css';
+@import './themes/_amber-crt.css';
+@import './themes/_cool-cyan.css';
+@import './themes/_syntax.css';
+
+/* Effects */
+@import './effects/_scanlines.css';
+@import './effects/_glow.css';
+@import './effects/_flicker.css';
+
+/* Utilities */
+@import './utilities/_text.css';
+@import './utilities/_animation.css';
+
+/* Base Reset & Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--tui-font-mono);
+  font-size: var(--tui-font-size-base);
+  line-height: var(--tui-line-height-base);
+  background-color: var(--tui-bg-base);
+  color: var(--tui-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--tui-theme-primary);
+  color: var(--tui-bg-base);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--tui-theme-primary);
+  outline-offset: 2px;
+}
+
+/* Link styles */
+a {
+  color: var(--tui-theme-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tui-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tui-border-muted);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tui-border-secondary);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tui-border-muted) var(--tui-bg-base);
+}
+
+/* Code and pre styles */
+code, pre {
+  font-family: var(--tui-font-mono);
+  font-size: var(--tui-font-size-sm);
+}
+
+pre {
+  overflow-x: auto;
+  padding: var(--tui-space-4);
+  background: var(--tui-bg-elevated);
+  border: 1px solid var(--tui-border-muted);
+}
+
+/* Button reset */
+button {
+  font-family: var(--tui-font-mono);
+  font-size: var(--tui-font-size-base);
+  background: transparent;
+  border: 1px solid var(--tui-border-primary);
+  color: var(--tui-text-primary);
+  cursor: pointer;
+  padding: var(--tui-space-2) var(--tui-space-4);
+}
+
+button:hover {
+  background: var(--tui-theme-primary);
+  color: var(--tui-bg-base);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input styles */
+input, textarea {
+  font-family: var(--tui-font-mono);
+  font-size: var(--tui-font-size-base);
+  background: var(--tui-bg-elevated);
+  border: 1px solid var(--tui-border-muted);
+  color: var(--tui-text-primary);
+  padding: var(--tui-space-2) var(--tui-space-3);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--tui-theme-primary);
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--tui-text-muted);
+}

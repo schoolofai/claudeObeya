@@ -1,0 +1,26 @@
+/* Cool Cyan Theme - Modern Sci-Fi Terminal */
+
+[data-theme="cool-cyan"] {
+  --tui-theme-primary: var(--tui-cyan-base);
+  --tui-theme-primary-bright: var(--tui-cyan-bright);
+  --tui-theme-primary-dim: var(--tui-cyan-dim);
+  --tui-theme-primary-glow: var(--tui-cyan-glow);
+
+  --tui-text-primary: var(--tui-cyan-base);
+  --tui-text-secondary: var(--tui-cyan-dim);
+  --tui-text-muted: #006666;
+
+  --tui-border-primary: var(--tui-cyan-base);
+  --tui-border-secondary: var(--tui-cyan-dim);
+  --tui-border-muted: #003333;
+
+  color: var(--tui-cyan-base);
+}
+
+[data-theme="cool-cyan"] .tui-glow,
+[data-theme="cool-cyan"] .tui-text-glow {
+  text-shadow:
+    0 0 2px var(--tui-cyan-glow),
+    0 0 4px var(--tui-cyan-glow),
+    0 0 8px var(--tui-cyan-glow);
+}

@@ -1,0 +1,89 @@
+/* TUI Phosphor Glow Effects */
+
+/* Text glow */
+.tui-glow {
+  text-shadow:
+    0 0 2px var(--tui-theme-primary-glow),
+    0 0 4px var(--tui-theme-primary-glow),
+    0 0 8px var(--tui-theme-primary-glow);
+}
+
+/* Subtle glow */
+.tui-glow-subtle {
+  text-shadow:
+    0 0 1px var(--tui-theme-primary-glow),
+    0 0 2px var(--tui-theme-primary-glow);
+}
+
+/* Intense glow */
+.tui-glow-intense {
+  text-shadow:
+    0 0 4px var(--tui-theme-primary-glow),
+    0 0 8px var(--tui-theme-primary-glow),
+    0 0 16px var(--tui-theme-primary-glow),
+    0 0 24px var(--tui-theme-primary-glow);
+}
+
+/* Pulsing glow animation */
+.tui-glow-pulse {
+  animation: tui-pulse-glow 2s ease-in-out infinite;
+}
+
+/* Box glow (for containers) */
+.tui-box-glow {
+  box-shadow:
+    0 0 4px var(--tui-theme-primary-glow),
+    0 0 8px var(--tui-theme-primary-glow),
+    inset 0 0 4px var(--tui-theme-primary-glow);
+}
+
+/* Colored glow variants */
+.tui-glow-green {
+  text-shadow:
+    0 0 2px var(--tui-green-glow),
+    0 0 4px var(--tui-green-glow),
+    0 0 8px var(--tui-green-glow);
+}
+
+.tui-glow-amber {
+  text-shadow:
+    0 0 2px var(--tui-amber-glow),
+    0 0 4px var(--tui-amber-glow),
+    0 0 8px var(--tui-amber-glow);
+}
+
+.tui-glow-cyan {
+  text-shadow:
+    0 0 2px var(--tui-cyan-glow),
+    0 0 4px var(--tui-cyan-glow),
+    0 0 8px var(--tui-cyan-glow);
+}
+
+.tui-glow-magenta {
+  text-shadow:
+    0 0 2px var(--tui-magenta-glow),
+    0 0 4px var(--tui-magenta-glow),
+    0 0 8px var(--tui-magenta-glow);
+}
+
+.tui-glow-red {
+  text-shadow:
+    0 0 2px var(--tui-red-glow),
+    0 0 4px var(--tui-red-glow),
+    0 0 8px var(--tui-red-glow);
+}
+
+/* Disable glow for reduced motion or when explicitly disabled */
+@media (prefers-reduced-motion: reduce) {
+  .tui-glow-pulse {
+    animation: none;
+  }
+}
+
+[data-effects="reduced"] .tui-glow,
+[data-effects="reduced"] .tui-glow-subtle,
+[data-effects="reduced"] .tui-glow-intense,
+[data-effects="reduced"] .tui-box-glow {
+  text-shadow: none;
+  box-shadow: none;
+}

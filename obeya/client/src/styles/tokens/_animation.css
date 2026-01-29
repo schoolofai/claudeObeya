@@ -1,0 +1,108 @@
+/* TUI Animation Design Tokens */
+
+:root {
+  /* Animation durations */
+  --tui-duration-instant: 50ms;
+  --tui-duration-fast: 100ms;
+  --tui-duration-base: 200ms;
+  --tui-duration-slow: 400ms;
+
+  /* Blink speeds */
+  --tui-blink-speed: 530ms;
+  --tui-blink-fast: 250ms;
+  --tui-blink-slow: 1000ms;
+
+  /* Typewriter speed */
+  --tui-type-speed: 50ms;
+  --tui-type-fast: 25ms;
+  --tui-type-slow: 100ms;
+
+  /* Spinner speed */
+  --tui-spinner-speed: 80ms;
+
+  /* Easing functions */
+  --tui-ease-linear: linear;
+  --tui-ease-step: steps(1);
+  --tui-ease-in-out: ease-in-out;
+}
+
+/* Blinking cursor animation */
+@keyframes tui-blink {
+  0%, 49.9% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* CRT flicker animation */
+@keyframes tui-flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.99; }
+  15% { opacity: 0.94; }
+  20% { opacity: 0.98; }
+  25% { opacity: 0.97; }
+  30% { opacity: 0.96; }
+  35% { opacity: 0.99; }
+  40% { opacity: 0.95; }
+  45% { opacity: 0.98; }
+  50% { opacity: 0.97; }
+  55% { opacity: 0.96; }
+  60% { opacity: 0.99; }
+  65% { opacity: 0.95; }
+  70% { opacity: 0.98; }
+  75% { opacity: 0.97; }
+  80% { opacity: 0.99; }
+  85% { opacity: 0.94; }
+  90% { opacity: 0.98; }
+  95% { opacity: 0.96; }
+  100% { opacity: 0.97; }
+}
+
+/* Pulse glow animation */
+@keyframes tui-pulse-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 2px var(--tui-theme-primary-glow),
+      0 0 4px var(--tui-theme-primary-glow);
+  }
+  50% {
+    text-shadow:
+      0 0 4px var(--tui-theme-primary-glow),
+      0 0 8px var(--tui-theme-primary-glow),
+      0 0 12px var(--tui-theme-primary-glow);
+  }
+}
+
+/* Fade in animation */
+@keyframes tui-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scan line sweep */
+@keyframes tui-scanline-sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

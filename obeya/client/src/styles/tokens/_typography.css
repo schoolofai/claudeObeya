@@ -1,0 +1,44 @@
+/* TUI Typography Design Tokens */
+
+:root {
+  /* Font families */
+  --tui-font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Consolas', monospace;
+  --tui-font-display: 'VT323', 'Courier New', monospace;
+
+  /* Font sizes */
+  --tui-font-size-xs: 10px;
+  --tui-font-size-sm: 12px;
+  --tui-font-size-base: 14px;
+  --tui-font-size-md: 16px;
+  --tui-font-size-lg: 18px;
+  --tui-font-size-xl: 24px;
+  --tui-font-size-2xl: 32px;
+
+  /* Line heights */
+  --tui-line-height-tight: 1.2;
+  --tui-line-height-base: 1.5;
+  --tui-line-height-relaxed: 1.75;
+
+  /* Font weights */
+  --tui-font-weight-normal: 400;
+  --tui-font-weight-medium: 500;
+  --tui-font-weight-semibold: 600;
+  --tui-font-weight-bold: 700;
+
+  /* Letter spacing */
+  --tui-letter-spacing-tight: -0.02em;
+  --tui-letter-spacing-normal: 0;
+  --tui-letter-spacing-wide: 0.05em;
+  --tui-letter-spacing-wider: 0.1em;
+}
+
+/* Base typography styles */
+body {
+  font-family: var(--tui-font-mono);
+  font-size: var(--tui-font-size-base);
+  line-height: var(--tui-line-height-base);
+  font-weight: var(--tui-font-weight-normal);
+  letter-spacing: var(--tui-letter-spacing-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

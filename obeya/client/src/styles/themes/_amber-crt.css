@@ -1,0 +1,26 @@
+/* Amber CRT Theme - Warm Vintage Terminal */
+
+[data-theme="amber-crt"] {
+  --tui-theme-primary: var(--tui-amber-base);
+  --tui-theme-primary-bright: var(--tui-amber-bright);
+  --tui-theme-primary-dim: var(--tui-amber-dim);
+  --tui-theme-primary-glow: var(--tui-amber-glow);
+
+  --tui-text-primary: var(--tui-amber-base);
+  --tui-text-secondary: var(--tui-amber-dim);
+  --tui-text-muted: #665500;
+
+  --tui-border-primary: var(--tui-amber-base);
+  --tui-border-secondary: var(--tui-amber-dim);
+  --tui-border-muted: #332a00;
+
+  color: var(--tui-amber-base);
+}
+
+[data-theme="amber-crt"] .tui-glow,
+[data-theme="amber-crt"] .tui-text-glow {
+  text-shadow:
+    0 0 2px var(--tui-amber-glow),
+    0 0 4px var(--tui-amber-glow),
+    0 0 8px var(--tui-amber-glow);
+}
